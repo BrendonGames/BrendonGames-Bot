@@ -3,7 +3,7 @@ my first ever discord bot
 
 This is meant for myself, but feel free to take a look
 
-Made with [Replit](https://replit.com/@BrendonGames/BrendonGames-Bot)
+Made on [Replit](https://replit.com/@BrendonGames/BrendonGames-Bot)
 
 # Use it yourself?
 It's very simple to make this bot yours. I would recommend you inform yourself on how to use Discord.JS and Node.
