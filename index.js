@@ -13,6 +13,7 @@ app.get("/", (req, res) => {
 const Discord = require("discord.js");
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
 const fs = require("fs");
+const { config } = require("process");
 const prefix = "h "
 client.commands = new Discord.Collection();
 const commands = fs.readdirSync("./Commands").filter(file => file.endsWith(".js"));
@@ -492,4 +493,13 @@ if (message.content.toLowerCase().startsWith("kys")) {
     }
   }, 60000); // 1 minute in milliseconds
 
-client.login(process.env.token)
+
+
+  let loginConfig;
+  if (fs.existsSync('./config.json')) {
+    loginConfig = require('./config.json')
+  }
+
+  const token = loginConfig?.token || process.env.token;
+
+client.login(token)
