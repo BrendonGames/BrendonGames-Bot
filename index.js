@@ -70,7 +70,7 @@ client.on("ready", async () => {
 
 
 
-const disable_time = 5 * 60 * 1000
+const disable_time = 10 * 60 * 1000
 let timeoutID;
 let disabled_joke_channels = [];
 
@@ -81,7 +81,7 @@ client.on("messageCreate", message => {
   
     let channelIdToRemove = message.channel.id
     
-    message.channel.send("I've waited for my 5 minutes.\nIf it's getting annoying, just ping me again!")
+    message.channel.send("I've waited for my 10 minutes.\nIf it's getting annoying, just ping me again!")
 
     const index = disabled_joke_channels.indexOf(channelIdToRemove);
   
@@ -99,7 +99,7 @@ client.on("messageCreate", message => {
 
       disabled_joke_channels.push(message.channel.id)
 
-        message.channel.send("I've been prevented to make dad jokes for 5 minutes.\nSee you later")
+        message.channel.send("I've been prevented to make dad jokes for 10 minutes.\nSee you later")
         timeoutID = setTimeout(enable_dadjokes, disable_time)
         console.log("Dad jokes disabled in #" + message.channel.name + " id: " + message.channel.id)
 
