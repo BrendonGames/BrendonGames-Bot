@@ -486,15 +486,14 @@ client.on("messageCreate", message => {
 //snipe
 client.on('messageDelete', async (message) => {
 
+  let sendTo = client.channels.cache.get('1102589588809187339')
   let ChannelMessage = message.channel
-  let snipe_message_author = message.author
+  let snipe_message_author = `${message.author.username}#${message.author.discriminator}`
   let snipe_message_content = message.content
-
-  if (snipe_message_author.id == "858043447298359347" || snipe_message_author.id == "1101136433349132309") {
+  
     if (snipe_message_content) {
-      client.channels.cache.get('1102589588809187339').send(`User:\n${snipe_message_author}\nIn:\n${ChannelMessage}\nDeleted message:\n${snipe_message_content}\n` );
+      sendTo.send(`User:\n${snipe_message_author}\nIn:\n${ChannelMessage}\nDeleted message:\n${snipe_message_content}\n` );
     }
-  }
 });
 
 
@@ -508,7 +507,7 @@ client.on('messageDelete', async (message) => {
 
     // Check if it's the specified day of the week and time
     if (currentDayOfWeek === dayOfWeek && currentHour === hour && currentMinute === minute) {
-      const channel = client.channels.cache.get(channelId);
+      let channel = client.channels.cache.get(channelId);
       channel.send('<@&1088027946477957190> vergeet je daltonuren niet');
     }
   }, 60000); // 1 minute in milliseconds
