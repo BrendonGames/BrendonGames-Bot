@@ -417,7 +417,7 @@ if (message.content.toLowerCase().startsWith("kys")) {
 
 
   
-  //h-bot
+  //h-bot//////////////////////////////////////////////////////////////////////////////
     if (message.content === "h") {
       if (message.author.id === `935931725194870804` || message.author.id === `457458285340262411`) {
     const h = client.emojis.cache.get("945306994821201981");
@@ -452,31 +452,9 @@ if (message.content.toLowerCase().startsWith("kys")) {
     message.reply("*h").catch(console.error);
     message.channel.send(`${hmad}`);
     }
-
-  if (message.content.toLowerCase() === "skill issue") {
-  const guildid = message.guild.id
-  if (guildid === "913902828970451015" || guildid === "668184554762272828") {
-  return;
-  } else {
-    message.channel.send(`${client.emojis.cache.get("946149477281071134")}`);
-    }
-  }
-
-  if (message.content.toLowerCase() === "kekw") {
-    if (message.author.id === "457458285340262411") {
-    message.delete(1000).catch(console.error);
-    message.channel.send(`${client.emojis.cache.get("946149477281071134")}`);
-      }
-      return;
-    }
-  return;
-
-
-
-
-  
-  
 })
+///////////////////////////////////////////////////////////////////////////////////////
+
 
 // Dalton uur inplannen
 // Set interval to check the time every minute
