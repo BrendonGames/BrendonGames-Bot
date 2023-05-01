@@ -242,17 +242,24 @@ client.on("messageCreate", message => {
     }, 10000)
   }*/
 
-if (message.content.toLowerCase().startsWith("kys")) {
+
+  //what?
+  if (message.content.toLowerCase() == "what" || message.content.toLowerCase() == "what?") {
+    message.channel.send("https://cdn.discordapp.com/attachments/930750934387163138/1102587415874519170/IMG_3616.png")
+  }
+
+  //kys
+  if (message.content.toLowerCase().startsWith("kys")) {
   message.channel.send("https://tenor.com/view/kys-keep-yourself-safe-low-tier-god-gif-24664025")
   }
 
-  // komt goed
+  //komt goed
   if (message.content.toLowerCase().includes("komt goed")) {
     message.channel.send("https://cdn.discordapp.com/attachments/645567404428099585/1089835527676625057/611163E7-22BE-4FEC-8562-4BFEC0302A38.jpg")
     }
 
-  ///motivation
 
+  //motivation
   if (message.content.toLowerCase() === "i need motivation") {
     if (message.author.id === "935931725194870804"  || message.author.id == "457458285340262411" || message.author.id === "887721851663560724" || message.author.id === "511241258065330200" || message.author.id === "580419287487873024" || message.author.id === "551078071353212933" || message.author.id === "689181843962069116") {
 
@@ -385,6 +392,7 @@ if (message.content.toLowerCase().startsWith("kys")) {
     
   }*/
   
+  //no f@rt
   // Check if the message was sent by a restricted user and contains the limited word
   if (restrictedUsers.includes(message.author.id) && limitedWord.test(message.content)) {
     // Check the last time the user used the limited word and whether the bot has sent a warning message
@@ -410,6 +418,7 @@ if (message.content.toLowerCase().startsWith("kys")) {
     }
   }
 
+  //I can do anything
   if (message.content.includes("anything") && message.author.id == "658633685339209730") {
   message.channel.send("https://tenor.com/view/dancing-deltarune-jevil-happy-gif-12933888")
 }
@@ -417,7 +426,7 @@ if (message.content.toLowerCase().startsWith("kys")) {
 
 
   
-  //h-bot//////////////////////////////////////////////////////////////////////////////
+//h-bot///////////////////////////////////////////////////////////////////////////////////////////////
     if (message.content === "h") {
       if (message.author.id === `935931725194870804` || message.author.id === `457458285340262411`) {
     const h = client.emojis.cache.get("945306994821201981");
@@ -452,8 +461,41 @@ if (message.content.toLowerCase().startsWith("kys")) {
     message.reply("*h").catch(console.error);
     message.channel.send(`${hmad}`);
     }
+
+  if (message.content.toLowerCase() === "skill issue") {
+  const guildid = message.guild.id
+  if (guildid === "913902828970451015" || guildid === "668184554762272828") {
+  return;
+  } else {
+    message.channel.send(`${client.emojis.cache.get("946149477281071134")}`);
+    }
+  }
+
+  if (message.content.toLowerCase() === "kekw") {
+    if (message.author.id === "457458285340262411") {
+    message.delete(1000).catch(console.error);
+    message.channel.send(`${client.emojis.cache.get("946149477281071134")}`);
+      }
+      return;
+    }
+  return;
+
 })
-///////////////////////////////////////////////////////////////////////////////////////
+//h-bot///////////////////////////////////////////////////////////////////////////////////////////////
+
+//snipe
+client.on('messageDelete', async (message) => {
+
+  let ChannelMessage = message.channel
+  let snipe_message_author = message.author
+  let snipe_message_content = message.content
+
+  if (snipe_message_author.id == "858043447298359347" || snipe_message_author.id == "1101136433349132309") {
+    if (snipe_message_content) {
+      client.channels.cache.get('1102589588809187339').send(`User:\n${snipe_message_author}\nIn:\n${ChannelMessage}\nDeleted message:\n${snipe_message_content}\n` );
+    }
+  }
+});
 
 
 // Dalton uur inplannen
