@@ -1,5 +1,6 @@
 # Private stuff
 config.json
+store.json
 
 # Logs
 logs
