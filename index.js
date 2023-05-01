@@ -93,7 +93,7 @@ client.on("messageCreate", message => {
   
   }
 
-  if(message.mentions.users.has("858043447298359347") && !message.reference) {
+  if(message.mentions.users.has("858043447298359347") && !message.reference && message.channel.id != "1102589588809187339") {
 
     if(!disabled_joke_channels.includes(message.channel.id)) {
 
@@ -492,7 +492,7 @@ client.on('messageDelete', async (message) => {
   let snipe_message_content = message.content
   
     if (snipe_message_content) {
-      sendTo.send(`User:\n${snipe_message_author}\nIn:\n${ChannelMessage}\nDeleted message:\n${snipe_message_content}\n` );
+      sendTo.send(`User:\n${snipe_message_author}\nIn:\n${ChannelMessage}\nDeleted message:\n${snipe_message_content}\n.` );
     }
 });
 
