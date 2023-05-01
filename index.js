@@ -492,7 +492,7 @@ client.on('messageDelete', async (message) => {
   let snipe_message_content = message.content
   
     if (snipe_message_content) {
-      sendTo.send(`User:\n${snipe_message_author}\nIn:\n${ChannelMessage}\nDeleted message:\n${snipe_message_content}\n.` );
+      sendTo.send(`Newly deleted message:\n\n> User:\n${snipe_message_author}\n> In:\n${ChannelMessage}\n> Deleted message:\n${snipe_message_content}` );
     }
 });
 
