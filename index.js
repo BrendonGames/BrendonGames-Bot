@@ -311,16 +311,16 @@ client.on("messageCreate", message => {
   }
 
   ///No Horny
-  /*if (message.author.id === "935931725194870804") {
+  if (message.channel.id === "1102699108420038706") {
     if (message.content.toLowerCase().includes("smash")) {
     let embed = new Discord.MessageEmbed()
           .setColor("RANDOM")
-          .setTitle("GO TO HORNY JAIL >:(")
+          .setTitle("That's not appropriate here, go to horny jail >:(")
           .setImage("https://cdn.discordapp.com/attachments/803277921929396235/1069686518903480450/download.jpg")
           .setTimestamp()
         message.channel.send({ embeds: [embed] })
     }
-  }*/
+  }
   
   ///General Kenobi
   if (message.content.toLowerCase() === "hello there") {
