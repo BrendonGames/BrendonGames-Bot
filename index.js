@@ -315,7 +315,7 @@ client.on("messageCreate", message => {
     if (message.content.toLowerCase().includes("smash")) {
     let embed = new Discord.MessageEmbed()
           .setColor("RANDOM")
-          .setTitle("That's not appropriate here, go to horny jail >:(")
+          .setTitle(message.author + " that's not appropriate here, go to horny jail >:(")
           .setImage("https://cdn.discordapp.com/attachments/803277921929396235/1069686518903480450/download.jpg")
           .setTimestamp()
         message.channel.send({ embeds: [embed] })
