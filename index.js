@@ -12,6 +12,7 @@ app.get("/", (req, res) => {
 
 const Discord = require("discord.js");
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
+const bots = [`858043447298359347`, `1101136433349132309`]
 const fs = require("fs");
 const { config } = require("process");
 const prefix = "h "
@@ -74,6 +75,8 @@ const disable_time = 10 * 60 * 1000
 let timeoutID;
 let disabled_joke_channels = [];
 
+const noDadJokes = [`1087793490462789807`, `1061577245300359199`, `1102589588809187339`]
+
 
 client.on("messageCreate", message => {
   
@@ -124,7 +127,7 @@ client.on("messageCreate", message => {
   const match = lowercaseContent.match(/i['’\s]?m\s+(.*)/i);
 
   if (!disabled_joke_channels.includes(message.channel.id)) {
-  if (message.author.id !== "858043447298359347" && message.channel.id !== "1087793490462789807" && !message.content.includes("||")) {
+  if (!bots.includes(message.author.id) && !noDadJokes.includes(message.channel.id) && !message.content.includes("||")) {
     if (match && !message.content.toLowerCase().includes("him")) {
       const index = match.index;
         if( message.content.includes(`'`) || message.content.includes(`’`)) {
@@ -315,7 +318,7 @@ client.on("messageCreate", message => {
     if (message.content.toLowerCase().includes("smash")) {
     let embed = new Discord.MessageEmbed()
           .setColor("RANDOM")
-          .setTitle(message.author + " that's not appropriate here, go to horny jail >:(")
+          .setTitle(message.author.username + " that's not appropriate here, go to horny jail >:(")
           .setImage("https://cdn.discordapp.com/attachments/803277921929396235/1069686518903480450/download.jpg")
           .setTimestamp()
         message.channel.send({ embeds: [embed] })
