@@ -24,6 +24,9 @@ for (file of commands) {
   client.commands.set(commandName, command);
 }
 
+// fully disable bot in channels
+const nonochannels = ["1087793490462789807", "985840778683220048"]
+
 const channelId = '1030104426968535060'; // Replace with the ID of the channel you want to send the message to
 const dayOfWeek = 5; // 0 = Sunday, 1 = Monday, 2 = Tuesday, and so on
 const hour = 16; // 24-hour format
@@ -80,6 +83,8 @@ const noDadJokes = [`1087793490462789807`, `1061577245300359199`, `1102589588809
 
 client.on("messageCreate", message => {
   
+  if(!nonochannels.includes(message.channel.id)) {
+
   function enable_dadjokes() {
   
     let channelIdToRemove = message.channel.id
@@ -170,6 +175,10 @@ client.on("messageCreate", message => {
       "HOLY SH- I'M ABOUT TO BEAT SANS" + hiddenText + "https://preview.redd.it/v94hioc60eja1.jpg?width=640&crop=smart&auto=webp&v=enabled&s=2821a86fceacd67e12e428e03b6fce58a8370706",
       "you can't spell LOVE without LO(SS)" + hiddenText + "https://i.redd.it/91exjnz2q0ha1.png",
       "Patrick's losst brother" + hiddenText + "https://preview.redd.it/7pmqj9g69qea1.jpg?width=640&crop=smart&auto=webp&v=enabled&s=036c27537cd7975bb7d2a6961f9434ca146d63e7",
+      "Literally crying rn at how touching this is" + hiddenText + "https://i.redd.it/v2jeeqlfepta1.png",
+      "Will it be red or blue!?" + hiddenText + "https://preview.redd.it/8qbq0pvd9sza1.jpg?width=640&crop=smart&auto=webp&v=enabled&s=35893093ede421e1f8e2238a51c9a54b73565e40",
+      "Sorry for your loss, but at least there cake :D" + hiddenText + "https://i.redd.it/8b3wdybm0vza1.jpg",
+      ";.;" + hiddenText + "https://cdn.discordapp.com/attachments/803277921929396235/1112686081951940648/rapidsave.com_memes_doesnt_allow_videos_so_yall_get_this-ucxdffq0oa0b1.mp4",
     ]
 
     let randomNumber = Math.random()
@@ -483,6 +492,7 @@ client.on("messageCreate", message => {
     }
   return;
 
+  }
 })
 //h-bot///////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -497,6 +507,7 @@ client.on('messageDelete', async (message) => {
     if (snipe_message_content) {
       sendTo.send(`Newly deleted message:\n\n> User:\n${snipe_message_author}\n> In:\n${ChannelMessage}\n> Deleted message:\n${snipe_message_content}` );
     }
+
 });
 
 
