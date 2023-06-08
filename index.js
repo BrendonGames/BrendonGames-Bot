@@ -25,7 +25,7 @@ for (file of commands) {
 }
 
 // fully disable bot in channels
-const nonochannels = ["1087793490462789807", "985840778683220048"]
+const nonochannels = ["1087793490462789807", "985840778683220048", "1084180540170698762"]
 
 const channelId = '1030104426968535060'; // Replace with the ID of the channel you want to send the message to
 const dayOfWeek = 5; // 0 = Sunday, 1 = Monday, 2 = Tuesday, and so on
