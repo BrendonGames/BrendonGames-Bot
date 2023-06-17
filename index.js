@@ -85,7 +85,7 @@ client.on("messageCreate", message => {
   
   if(!nonochannels.includes(message.channel.id)) {
 
-  function enable_dadjokes() {
+  /*function enable_dadjokes() {
   
     let channelIdToRemove = message.channel.id
     
@@ -144,7 +144,7 @@ client.on("messageCreate", message => {
          }
       }
     }
-  }
+  }*/
 
   ///Command Handler
   if (message.content.startsWith(prefix)) {
